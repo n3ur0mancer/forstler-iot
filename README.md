@@ -21,3 +21,5 @@ The two mounting brackets were printed in TPU:
 The "Heltec ESP32+LoRa+OLED case" was designed by Ornotermes, the files are also available on his printables account: https://www.printables.com/model/78782-heltec-esp32loraoled-case
 
 ## The Bill of Materials (BOM)
+
+An overview of the used materials to build the IoT prototype can be found in the following spreadsheet: https://docs.google.com/spreadsheets/d/1dz7JD1OWfYzz5f2v8qW8TEdJs5A8Jh1jVMu9EAY6Yb4/edit?usp=sharing
