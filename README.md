@@ -6,6 +6,8 @@ Repository for the IoT part of Forstler.
 
 This project is the IoT part of the Forstler system. Forstler is a system to monitor and visualize forest health. It uses regional data from thir party providers and compares it with the local data which is being gathered by the Forstler IoT module. The repository for the single page application part can be found here: https://github.com/n3ur0mancer/forstler-app
 
+This project is currently just a mere prototype and needs further development to be fully functional.
+
 ## The 3D-Print Files
 
 The following models were printed in ASA:
