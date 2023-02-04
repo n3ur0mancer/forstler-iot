@@ -1,8 +1,8 @@
 #include <BMP280.h>
 BMP280 bmp280;
 
-#define SDA_PIN 36
-#define SCL_PIN 35
+#define SDA_PIN 35
+#define SCL_PIN 36
 
 
 void setup()
