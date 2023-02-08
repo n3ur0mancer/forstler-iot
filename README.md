@@ -8,7 +8,9 @@ This project is the IoT part of the Forstler system. Forstler is a system to mon
 
 This project is currently just a mere prototype and needs further development to be fully functional.
 
-## The 3D-Print Files
+## The Hardware Prototype
+
+### The 3D-Print Files
 
 The following models were printed in ASA:
 
@@ -22,6 +24,12 @@ The two mounting brackets were printed in TPU:
 
 The "Heltec ESP32+LoRa+OLED case" was designed by Ornotermes, the files are also available on his printables account: https://www.printables.com/model/78782-heltec-esp32loraoled-case
 
-## The Bill of Materials (BOM)
+### The Bill of Materials (BOM)
 
-An overview of the used materials to build the IoT prototype can be found in the following spreadsheet: https://docs.google.com/spreadsheets/d/1dz7JD1OWfYzz5f2v8qW8TEdJs5A8Jh1jVMu9EAY6Yb4/edit?usp=sharing
+An overview of the used materials, tools and electronics to build the IoT prototype can be found in the following [Google Sheet](https://docs.google.com/spreadsheets/d/1dz7JD1OWfYzz5f2v8qW8TEdJs5A8Jh1jVMu9EAY6Yb4/edit?usp=sharing) bill of materials (BOM).
+
+## The Software Prototype
+
+### Prerequisites to get started
+
+Downloard the [Arduino IDE](https://www.arduino.cc/en/software/) and install the following libraries:
