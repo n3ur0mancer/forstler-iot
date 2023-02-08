@@ -5,6 +5,9 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
+#define SDA_PIN 19
+#define SCL_PIN 20
+
 BMP280 bmp280;
 BH1750 lightMeter;
 DHT dht(33, DHT22);
@@ -12,37 +15,38 @@ OneWire oneWire(21);
 DallasTemperature sensors(&oneWire);
 
 void setup() {
-  Serial.begin(115200);
+Serial.begin(115200);
 
-  // BMP280
-  Wire.begin(35, 36);
-  bmp280.begin();
+// Initialize the I2C bus
+Wire.begin(SDA_PIN, SCL_PIN);
 
-  // BH1750
-  Wire.begin(20, 19);
-  lightMeter.begin();
+// BMP280
+bmp280.begin();
 
-  // DHT
-  dht.begin();
+// BH1750
+lightMeter.begin();
 
-  // DallasTemperature
-  sensors.begin();
+// DHT
+dht.begin();
 
-  Serial.println("All sensors are ready");
+// DallasTemperature
+sensors.begin();
+
+Serial.println("All sensors are ready");
 }
 
 void loop() {
   // BMP280
   uint32_t pressure = bmp280.getPressure();
   float temperatureBmp280 = bmp280.getTemperature();
-
+  delay(500);
   // BH1750
   float lux = lightMeter.readLightLevel();
-
+  delay(500);
   // DHT
   float humidity = dht.readHumidity();
   float temperatureDht = dht.readTemperature();
-
+  delay(500);
   // DallasTemperature
   sensors.requestTemperatures();
   float temperatureDallas = sensors.getTempCByIndex(0);

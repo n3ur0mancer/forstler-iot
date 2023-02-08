@@ -32,10 +32,13 @@ An overview of the used materials, tools and electronics to build the IoT protot
 
 ### Prerequisites to get started
 
-Downloard the [Arduino IDE](https://www.arduino.cc/en/software/) and install the following libraries:
+Download the [Arduino IDE](https://www.arduino.cc/en/software/) and install the following libraries:
 
 - Wire
 - BH1750
+
+Port selection
+Board installation and selection
 
 ### The individual sensor codes
 
