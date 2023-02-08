@@ -4,7 +4,7 @@ Repository for the IoT part of Forstler.
 
 ## What is this project about?
 
-This project is the IoT part of the Forstler system. Forstler is a system to monitor and visualize forest health. It uses regional data from thir party providers and compares it with the local data which is being gathered by the Forstler IoT module. The repository for the single page application part can be found here: https://github.com/n3ur0mancer/forstler-app
+This project is the IoT part of the Forstler system. Forstler is a system to monitor and visualize forest health. It uses regional data from thir party providers and compares it with the local data which is being gathered by the Forstler IoT module. The code for the single page application part can be found ine the [forslter-app](https://github.com/n3ur0mancer/forstler-app) repository.
 
 This project is currently just a mere prototype and needs further development to be fully functional.
 
@@ -22,7 +22,7 @@ The two mounting brackets were printed in TPU:
 
 - iot-forest-monitor-bracket_V2
 
-The "Heltec ESP32+LoRa+OLED case" was designed by Ornotermes, the files are also available on his printables account: https://www.printables.com/model/78782-heltec-esp32loraoled-case
+The "Heltec ESP32+LoRa+OLED case" was designed by Ornotermes, the files are also available on his [printables page](https://www.printables.com/model/78782-heltec-esp32loraoled-case).
 
 ### The Bill of Materials (BOM)
 
@@ -33,3 +33,10 @@ An overview of the used materials, tools and electronics to build the IoT protot
 ### Prerequisites to get started
 
 Downloard the [Arduino IDE](https://www.arduino.cc/en/software/) and install the following libraries:
+
+- Wire
+- BH1750
+
+### The individual sensor codes
+
+In the directory _individual-sensors_ you will find the singled-out codes for the different sensors, in case you want to test your snesors indiviudally.
