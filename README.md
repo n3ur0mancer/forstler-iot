@@ -45,4 +45,4 @@ Select the right board and port to flash the ESP32.
 
 ### The individual sensor codes
 
-In the directory _individual-sensors_ you will find the singled-out codes for the different sensors, in case you want to test your snesors indiviudally.
+In the directory _sensors_ you will find the singled-out codes for the different sensors, in case you want to test your snesors indiviudally.

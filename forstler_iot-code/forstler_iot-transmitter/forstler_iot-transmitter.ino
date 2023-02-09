@@ -1,6 +1,6 @@
 #include "LoRaWan_APP.h"
 #include "Arduino.h"
-#include <BMP280.h>
+// #include <BMP280.h>
 #include <BH1750.h>
 #include <Wire.h>
 #include "DHT.h"
@@ -18,14 +18,15 @@
 #define LORA_IQ_INVERSION_ON                        false
 #define RX_TIMEOUT_VALUE                            1000
 #define BUFFER_SIZE                                 30 // Define the payload size here
+
 #define SDA_PIN 19
 #define SCL_PIN 20
 
-BMP280 bmp280;
+//BMP280 bmp280;
 BH1750 lightMeter;
 DHT dht(33, DHT22);
 OneWire oneWire(21);
-DallasTemperature sensors(&oneWire);
+DallasTemperature dallas(&oneWire);
 
 char txpacket[BUFFER_SIZE];
 char rxpacket[BUFFER_SIZE];
@@ -44,16 +45,18 @@ void setup() {
   Wire.begin(SDA_PIN, SCL_PIN);
 
   // BMP280
-  bmp280.begin();
+  // bmp280.begin();
+
+   // DallasTemperature
+  dallas.begin();
 
   // BH1750
   lightMeter.begin();
-
+  delay(50);
   // DHT
   dht.begin();
+  delay(50);
 
-  // DallasTemperature
-  sensors.begin();
 
   txNumber = 0;
 
@@ -74,15 +77,15 @@ void loop() {
   if (lora_idle == true) {
     delay(3000);
 
-float temperature = bmp280.getTemperature();
-float pressure = bmp280.getPressure();
+// float temperature = bmp280.getTemperature();
+// float pressure = bmp280.getPressure();
+dallas.requestTemperatures();
+float dallasTemp = dallas.getTempCByIndex(0);
 float dhtTemp = dht.readTemperature();
 float humidity = dht.readHumidity();
 float light = lightMeter.readLightLevel();
-sensors.requestTemperatures();
-float dallasTemp = sensors.getTempCByIndex(0);
 
-sprintf(txpacket, "BMPTemperature: %0.2f, BMPPressure: %0.2f, DHTTemperature: %0.2f, Humidity: %0.2f, LUX: %0.2f, DallasTemperature: %0.2f", temperature, pressure, dhtTemp, humidity, light, dallasTemp, txNumber); //start a package
+sprintf(txpacket, "DHTTemperature: %0.2f, Humidity: %0.2f, LUX: %0.2f, DallasTemperature: %0.2f", dhtTemp, humidity, light, dallasTemp, txNumber); //start a package
 
 Serial.printf("\r\nSending packet... Length: %d\r\n", txpacket, strlen(txpacket));
 
