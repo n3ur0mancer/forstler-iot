@@ -32,13 +32,16 @@ An overview of the used materials, tools and electronics to build the IoT protot
 
 ### Prerequisites to get started
 
-Download the [Arduino IDE](https://www.arduino.cc/en/software/) and install the following libraries:
+Download and install the [Arduino IDE](https://www.arduino.cc/en/software/).
+
+Follow the [instructions](https://docs.heltec.org/en/node/esp32/quick_start.html#via-arduino-board-manager) provided by Heltec to install the ESP32-S3 LoRa V3 board. If you simply use the V2 board that is already included in the supported library manager board, the code will have problems compiling.
+
+Install the necessary libraries:
 
 - Wire
 - BH1750
 
-Port selection
-Board installation and selection
+Select the right board and port to flash the ESP32.
 
 ### The individual sensor codes
 
