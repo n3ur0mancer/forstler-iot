@@ -75,7 +75,7 @@ void setup() {
 
 void loop() {
   if (lora_idle == true) {
-    delay(3000);
+    delay(10000);
 
 // float temperature = bmp280.getTemperature();
 // float pressure = bmp280.getPressure();

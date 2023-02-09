@@ -48,22 +48,27 @@ void setup() {
 
 void loop()
 {
+  Radio.IrqProcess( );
+
+  esp_display.clear();
+  esp_display.setFont(ArialMT_Plain_24);
+
   if(lora_idle)
   {
     lora_idle = false;
     Serial.println("into RX mode");
-    esp_display.setFont(ArialMT_Plain_10);
-    esp_display.drawString(0, 0, rxpacket);
-    esp_display.display();
     Radio.Rx(0);
-    delay(5000);
+    esp_display.drawStringMaxWidth(0, 0, 128, "Received! ");
   }
-  Radio.IrqProcess( );
-  esp_display.clear();
-  esp_display.setFont(ArialMT_Plain_24);
-  esp_display.drawStringMaxWidth(0, 0, 128, "Waiting for data...");
+  else
+  {
+    esp_display.drawStringMaxWidth(0, 0, 128, "Waiting for data...");
+  }
   esp_display.display();
+  delay(2500);
 }
+
+
 
 void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
 {
@@ -73,7 +78,8 @@ void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
     memcpy(rxpacket, payload, size );
     rxpacket[size]='\0';
     Radio.Sleep( );
-    Serial.printf("\r\nreceived packet \"%s\" with rssi %d , length %d\r\n",rxpacket,rssi,rxSize);
+    Serial.printf("\r\nReceived packet: \"%s\" with rssi %d , length %d\r\n",rxpacket,rssi,rxSize);
 		
     lora_idle = true;
 }
+
