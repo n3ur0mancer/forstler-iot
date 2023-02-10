@@ -32,7 +32,7 @@ An overview of the used materials, tools and electronics to build the IoT protot
 
 ### Requirements to get started
 
-Download and install the [Arduino IDE] (https://www.arduino.cc/en/software/).
+Download and install the [Arduino IDE](https://www.arduino.cc/en/software/).
 
 It is crucial to use the latest Heltec board profiles in the Arduino IDE, otherwise you will either not find the V3 version of the Heltec board, or you will fail when trying to flash the V2 boards.
 
@@ -81,7 +81,6 @@ With the ESP32 receiver connected to your machine, you can open the serial monit
 ```
 Packet received: "DHTTemperature: 22.20, Humidity: 46.60, LUX: 9.17, DallasTemperature: 23.19".
 Going into RX mode
-
 ```
 
 The RSSI stands for Received Signal Strength Indicator and gives an idea of how good the signal is.
@@ -90,6 +89,6 @@ The RSSI stands for Received Signal Strength Indicator and gives an idea of how 
 
 There are a few bugs that need to be fixed in the future:
 
-- The SHA-256 does not match. The problem is well explained by user [ESP_angus] (https://www.esp32.com/viewtopic.php?t=10143)
+- The SHA-256 does not match. The problem is well explained by user [ESP_angus](https://www.esp32.com/viewtopic.php?t=10143)
 - Problems with incorrect reading of the DS18B20. The initial values are correct, but after some time it tends to default to -127 as the degree Celsius reading.
 - This seems to be the cause of the error message: `E (21769) gpio: gpio_set_level(226): GPIO output gpio_num` on the transmitter side that needs to be addressed.
