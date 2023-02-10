@@ -92,3 +92,9 @@ There are a few bugs that need to be fixed in the future:
 - The SHA-256 does not match. The problem is well explained by user [ESP_angus](https://www.esp32.com/viewtopic.php?t=10143)
 - Problems with incorrect reading of the DS18B20. The initial values are correct, but after some time it tends to default to -127 as the degree Celsius reading.
 - This seems to be the cause of the error message: `E (21769) gpio: gpio_set_level(226): GPIO output gpio_num` on the transmitter side that needs to be addressed.
+
+To further improve the prototype, the following next steps could be taken:
+
+- Display the received data packet on the OLED display of the receiver
+- Transfer the received data over WiFi to a database
+- Long-term reliability testing
