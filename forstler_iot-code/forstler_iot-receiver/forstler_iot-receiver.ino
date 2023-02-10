@@ -56,7 +56,7 @@ void loop()
   if(lora_idle)
   {
     lora_idle = false;
-    Serial.println("into RX mode");
+    Serial.println("RX mode on...");
     Radio.Rx(0);
     esp_display.drawStringMaxWidth(0, 0, 128, "Received! ");
   }
