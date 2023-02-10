@@ -79,11 +79,13 @@ With both ESP32s powered up, the units should communicate automatically if no co
 With the ESP32 receiver connected to your machine, you can open the serial monitor and read the data received. Here is an example of what the received data should look like:
 
 ```
-Packet received: "DHTTemperature: 22.20, Humidity: 46.60, LUX: 9.17, DallasTemperature: 23.19".
-Going into RX mode
+Received packet: "DHTTemperature: 21.60, Humidity: 42.70, LUX: 0.83, DallasTemperature: 21.62" with rssi -80 , length 75
+RX mode on...
 ```
 
 The RSSI stands for Received Signal Strength Indicator and gives an idea of how good the signal is.
+
+The length stands for the character lenght of the received packet (without the quotation marks).
 
 ## Bugs to fix & further development
 
