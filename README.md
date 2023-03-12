@@ -2,6 +2,8 @@
 
 Repository for the IoT part of Forstler.
 
+![iot1 Large](https://user-images.githubusercontent.com/46748400/224561162-2431def5-8bf3-4b76-9f77-9afbff6040ce.png)
+
 ## What is this project about?
 
 This project is about the IoT part of the Forstler system. Forstler is a forest health monitoring and visualisation system. It uses regional data from third party providers and compares it with local data collected by the Forstler IoT module. The code for the single page application part can be found in the [forslter-app](https://github.com/n3ur0mancer/forstler-app) repository.
